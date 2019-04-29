@@ -1,0 +1,14 @@
+﻿.icone-editar {
+    color: orange;
+}
+.icone-editar :hover {
+    color: darkorange;
+    cursor: pointer;
+}
+.icone-remover {
+    color: red;
+}
+.icone-remover :hover {
+    color: darkred;
+    cursor: pointer;
+}
