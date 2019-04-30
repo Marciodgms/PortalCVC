@@ -12,3 +12,6 @@
     color: darkred;
     cursor: pointer;
 }
+.btn-add {
+    position: absolute;
+}

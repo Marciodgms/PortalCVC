@@ -82,7 +82,7 @@
                             <span asp-validation-for="CEP" class="text-danger"></span>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-3">
 
                         <div class="form-group">
                             <label asp-for="Numero" class="control-label"></label>
@@ -90,12 +90,20 @@
                             <span asp-validation-for="Numero" class="text-danger"></span>
                         </div>
                     </div>
+                    <div class="col-md-3">
+
+                        <div class="form-group">
+                            <label asp-for="Complemento" class="control-label"></label>
+                            <input asp-for="Complemento" class="form-control" />
+                            <span asp-validation-for="Complemento" class="text-danger"></span>
+                        </div>
+                    </div>
                 </div>
                 <div class="row">
                     <div class="col-md-12">
                         <div class="form-group">
                             <label asp-for="Descricao" class="control-label"></label>
-                            <input  asp-for="Descricao" class="form-control" />
+                            <textarea asp-for="Descricao" rows="10" class="form-control"></textarea>
                             <span asp-validation-for="Descricao" class="text-danger"></span>
                         </div>
                     </div>

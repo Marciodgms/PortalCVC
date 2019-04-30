@@ -2,7 +2,6 @@
     ViewData["Title"] = "Empreendimentos";
     //Layout = "~/Views/Shared/_Main.cshtml";
 }
-
 <section class="content-header">
     <h1>
         Empreendimentos
@@ -16,8 +15,8 @@
 </section>
 <br />
 <div class="box">
-    <div class="box-header container">
-        <div class="row col-md-12">
+    <div class="box-header">
+        <div class="row col-md-12 btn-add">
             <a href="@Url.Action("Cadastrar","Empreendimento")" class="btn btn-primary pull-right"><i class="fa fa-plus"></i></a>
         </div>
     </div>
@@ -36,7 +35,7 @@
         </thead>
         <tbody>
 
-            @foreach (var item in ViewBag.Empreendimentos)
+            @foreach (tb_empreendimento item in ViewBag.Empreendimentos)
             {
                 <tr>
                     <td>@item.Id</td>
@@ -56,8 +55,8 @@
                         }
                     </td>
                     <td style="text-align: center;">
-                        <a href="@Url.Action("Editar","Empreendimento",1)" class="icone-editar"><i class="fa fa-edit"></i></a>
-                        <a class="icone-remover"><i class="fa fa-remove"></i></a>
+                        <a href="@Url.Action("Editar/" + item.Id.ToString(),"Empreendimento")" class="icone-editar"><i class="fa fa-edit"></i></a>
+                        <a class="icone-remover" href="@Url.Action("Deletar/" + item.Id,"Empreendimento")"><i class="fa fa-remove"></i></a>
                     </td>
                 </tr>
             }
@@ -69,7 +68,7 @@
 <script>
     $(document).ready(function () {
         $('#lstEmpreendimento').DataTable({
-            "paging": false,
+            "paging": true,
             "ordering": true,
             "bFilter": false,
             "language": {
