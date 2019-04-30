@@ -12,5 +12,6 @@ namespace PortalCVC.Models
         {
         }
         public DbSet<tb_empreendimento> tb_empreendimento { get; set; }
+        public DbSet<tb_empresa> tb_empresa { get; set; }
     }
 }

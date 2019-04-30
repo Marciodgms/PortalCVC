@@ -28,6 +28,8 @@ namespace PortalCVC.Models
         [Display(Name = "CEP")]
         [Required(ErrorMessage = "CEP não foi preenchido.")]
         public string CEP { get; set; }
+        [Display(Name = "Complemento")]
+        public string Complemento { get; set; }
         [Display(Name = "Numero")]
         public string Numero { get; set; }
         [Display(Name = "Descrição")]
@@ -37,7 +39,7 @@ namespace PortalCVC.Models
         [Display(Name = "Ativa no APP?")]
         public bool Ativo { get; set; }
 
-        //[NotMapped]
-        //public virtual tb_empresa Empresa;
+        [NotMapped]
+        public virtual tb_empresa  Empresa { get; set; }
     }
 }

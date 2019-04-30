@@ -18,21 +18,33 @@ namespace PortalCVC.Controllers
 
         public IActionResult Index()
         {
+            ViewBag.Empreendimentos = _db.tb_empreendimento
+                    .Join(_db.tb_empresa,
+                    empd => empd.EmpresaFK,
+                    empre => empre.Id,
+                    (empd, empre) => new { empd, empre }).Select(x => x.empd);
             return View();
         }
-        public IActionResult Editar()
+        public IActionResult Editar(int id)
         {
-            return View();
+            var empreendimento = _db.tb_empreendimento
+                    .Join(_db.tb_empresa,
+                    empd => empd.EmpresaFK,
+                    empre => empre.Id,
+                    (empd, empre) => new { empd, empre }).Select(x => x.empd)
+                    .Where(x => x.Id == id);
+            return View(empreendimento);
         }
         public IActionResult Cadastrar()
         {
-            var teste = _db.tb_empreendimento.ToList();
+            ViewBag.lstEmpresa = _db.tb_empresa.ToList();
             return View();
         }
         [HttpPost]
         public IActionResult Cadastrar(tb_empreendimento empreendimento)
         {
             _db.tb_empreendimento.Add(empreendimento);
+            _db.SaveChanges();
             return RedirectToAction("Index");
         }
     }

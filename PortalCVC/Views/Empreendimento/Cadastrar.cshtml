@@ -26,8 +26,12 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <label asp-for="EmpresaFK" class="control-label"></label>
+
                             <select asp-for="EmpresaFK" class="form-control">
-                                <option value="1">CONSTRUTORA VILLELA E CARVALHO</option>
+                                @foreach (var item in ViewBag.lstEmpresa)
+                                {
+                                    <option value="@item.Id"> @item.Nome </option>
+                                }
                             </select>
                             <span asp-validation-for="EmpresaFK" class="text-danger"></span>
                         </div>
