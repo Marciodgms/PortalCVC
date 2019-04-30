@@ -9,6 +9,13 @@ namespace PortalCVC.Controllers
 {
     public class EmpreendimentoController : Controller
     {
+        private readonly Contexto _db;
+
+        public EmpreendimentoController(Contexto Db)
+        {
+            _db = Db;
+        }
+
         public IActionResult Index()
         {
             return View();
@@ -19,11 +26,13 @@ namespace PortalCVC.Controllers
         }
         public IActionResult Cadastrar()
         {
+            var teste = _db.tb_empreendimento.ToList();
             return View();
         }
         [HttpPost]
         public IActionResult Cadastrar(tb_empreendimento empreendimento)
         {
+            _db.tb_empreendimento.Add(empreendimento);
             return RedirectToAction("Index");
         }
     }
