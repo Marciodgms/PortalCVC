@@ -1,0 +1,49 @@
+﻿@model PortalCVC.Models.tb_tipoarquivo
+
+@{
+    ViewData["Title"] = "Editar";
+    Layout = "~/Views/Shared/_Main.cshtml";
+}
+
+<section class="content-header">
+    <h1>
+        Editar tipo de arquivo
+        <small>Página de edição de tipo de arquivo</small>
+    </h1>
+    <ol class="breadcrumb">
+
+        <li><a href="@Url.Action("Index","Home")"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class=""><a href="@Url.Action("Index","TipoArquivo")">Tipo Arquivos</a></li>
+        <li class="active">Editar</li>
+    </ol>
+</section>
+<br />
+<div class="box">
+    <div class="box-body">
+        <form asp-action="Editar">
+            <div class="col-md-12">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label class="control-label">Tipo de arquivo:</label>
+                            <input required asp-for="Tipo" class="form-control" />
+                            <span asp-validation-for="Tipo" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <a class="btn btn-danger pull-right" href="@Url.Action("Index","TipoArquivo")">CANCELAR</a>
+                        <input type="submit" class="pull-right btn btn-primary" value="EDITAR" />
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div>
+</div>
+
+
+

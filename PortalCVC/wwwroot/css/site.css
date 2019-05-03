@@ -12,6 +12,9 @@
     color: darkred;
     cursor: pointer;
 }
+.dataTables_filter{
+    float: right !important;
+}
 .btn-add {
-    position: absolute;
+    /*position: absolute;*/
 }

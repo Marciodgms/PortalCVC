@@ -109,10 +109,38 @@
                 </form>
                 <!-- /.search form -->
                 @* MENU *@
-                <ul class="sidebar-menu" data-widget="tree">
-                    <li class="header">MENU</li>
-                    <li><a href="@Url.Action("Index","Empreendimento")"><i class="fa fa-building"></i> <span>Empreendimentos</span></a></li>
-                </ul>
+            <ul class="sidebar-menu tree" data-widget="tree">
+                <li class="header">MENU</li>
+                <li>
+                    <a href="@Url.Action("Index","Empreendimento")">
+                        <i class="fa fa-building"></i>
+                        <span>Empreendimentos</span>
+                    </a>
+                </li>
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-file-archive-o"></i> <span>Arquivos</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li>
+                            <a href="@Url.Action("Index","Arquivo")">
+                                <i class="fa fa-file"></i>
+                                <span>Arquivos / Imagens</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="@Url.Action("Index","TipoArquivo")">
+                                <i class="fa fa-file-o"></i>
+                                <span>Tipo de arquivo</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
             </section>
             <!-- /.sidebar -->
         </aside>
@@ -120,7 +148,7 @@
         <div class="content-wrapper">
             <!-- Main content -->
             <section class="content">
-               @RenderBody()
+                @RenderBody()
             </section>
             <!-- /.content -->
         </div>
@@ -140,7 +168,7 @@
     <script src="~/adminlte/bower_components/jquery-ui/jquery-ui.min.js"></script>
     <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
     <script>
-  $.widget.bridge('uibutton', $.ui.button);
+        $.widget.bridge('uibutton', $.ui.button);
     </script>
     <!-- Bootstrap 3.3.7 -->
     <script src="~/adminlte/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
